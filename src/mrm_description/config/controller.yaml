@@ -1,0 +1,15 @@
+threelink:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  bl1_controller:
+    type: effort_controllers/JointPositionController
+    joint: base_link_to_link_01
+    pid: {p: 10000, i: 0.0, d: 1}
+  bl2_controller:
+    type: effort_controllers/JointPositionController
+    joint: link_01_to_link_02
+    pid: {p: 10000, i: 0.0, d: 1}
